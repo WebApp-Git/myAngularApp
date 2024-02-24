@@ -1,0 +1,28 @@
+.home-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.question-layout{
+    width: 85%;
+    margin-top: 10px;
+    display: flex !important;
+    flex-direction: column;
+}

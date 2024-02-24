@@ -1,0 +1,52 @@
+<div class="form-container">
+    <div class="heading">
+        <h1>Form Details</h1>
+    </div>
+    <form [formGroup]="createqueForm" class="form-body">
+        <div formArrayName="queArr" class="form-outerBox">
+            <div *ngFor="let quee of questionArray.controls; let i=index" class="form-outerBox">
+                <div [formGroupName]="i" class="form-innerContent">
+                    <mat-form-field>
+                        <mat-label>Enter Questions</mat-label>
+                        <input formControlName="queName" matInput placeholder="Enter question">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Answer Type</mat-label>
+                        <mat-select formControlName="queType" (selectionChange)="detectAnsType($event,i)">
+                            <mat-option *ngFor="let valueType of ansTypes"
+                                [value]="valueType.value">{{valueType.label}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div *ngIf="questionArray.controls[i].get('queType').value == 'radio'">
+                        <mat-form-field>
+                            <mat-label>Answer0</mat-label>
+                            <input formControlName="ans1" matInput placeholder="Enter question">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Answer1</mat-label>
+                            <input formControlName="ans2" matInput placeholder="Enter question">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-delete-btn">
+                        <button mat-icon-button color="warn" (click)="removeQue(i)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button color="warn" (click)="addQue()">
+                <mat-icon>add</mat-icon>
+                More Question
+            </button>
+        </div>
+    </form>
+
+    <div class="button-layout">
+        <button mat-raised-button color="secondary" (click)="reset()">
+            Reset
+        </button>
+        <button mat-raised-button color="primary" [disabled]="createqueForm.invalid" (click)="onSubmit()">
+            Submit
+        </button>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-outerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.form-innerContent{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.form-delete-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.button-layout{
+    padding: 20px;
+    display: inline flex;
+    gap: 20px;
+}
